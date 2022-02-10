@@ -1,8 +1,9 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-//for need as a bean
+//create obj in spring container
 @Component
 //to tell create only when needed
 @Scope(value = "prototype")
@@ -10,8 +11,12 @@ public class Student {
 	private String name;
 	private int id;
 	private String lastName;
+	//to tell that there is a book obj in spring container,connect to it
+	@Autowired
+	private Books books;
 	public Student(){
 		System.out.println("Onject Created");
+
 	}
 	public String getName() {
 		return name;
@@ -33,6 +38,7 @@ public class Student {
 	}
 	public void show() {
 		System.out.println("Connected Student");
+		System.out.println(books.numberOfBooks());
 	}
 
 }
