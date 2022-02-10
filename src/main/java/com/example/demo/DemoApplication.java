@@ -11,7 +11,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 		ConfigurableApplicationContext context=SpringApplication.run(DemoApplication.class,args);
 		Student student=context.getBean(Student.class);
-		Student student1=context.getBean(Student.class);
+		student.show();
 	}
 
 }
