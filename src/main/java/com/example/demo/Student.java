@@ -15,8 +15,7 @@ public class Student {
 	@Autowired
 	private Books books;
 	public Student(){
-		System.out.println("Onject Created");
-
+		System.out.println("Object Created");
 	}
 	public String getName() {
 		return name;
@@ -36,9 +35,8 @@ public class Student {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public void show() {
-		System.out.println("Connected Student");
-		System.out.println(books.numberOfBooks());
+	public int show() {
+	return books.numberOfBooks();
 	}
 
 }
